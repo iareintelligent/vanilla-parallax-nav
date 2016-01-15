@@ -1,0 +1,78 @@
+<html>
+<head>
+</head>
+<body>
+<style>
+body {
+height: 6000px;
+font-family: Helvetica, Arial;
+}
+
+#top-menu {
+position: fixed;
+z-index: 1;
+background: white;
+left: 0;
+right: 0;
+top: 0;
+}
+
+#top-menu li {
+float: left;
+}
+
+#top-menu a {
+display: block;
+padding: 5px 25px 7px 25px;
+width: 4em;
+text-align: center;
+-webkit-transition: .5s all ease-out;
+-moz-transition: .5s all ease-out;
+transition: .5s all ease-out;
+border-top: 3px solid white;
+color: #aaa;
+text-decoration: none;
+}
+
+#top-menu a:hover {
+color: #000;
+}
+
+#top-menu a.active {
+border-top: 3px solid #333;
+color: #333;
+}
+
+#foo {
+position: absolute;
+top: 400px;
+}
+
+#bar {
+position: absolute;
+top: 800px;
+}
+
+#baz {
+position: absolute;
+top: 1200px;
+}
+
+</style>
+
+<div id="top-menu">
+  <a href="#" class="active">Top</a>
+  <a href="#foo">Foo</a>
+  <a href="#bar">Bar</a>
+  <a href="#baz">Baz</a>
+</div>
+
+<a id="foo">Foo</a>
+
+
+<a id="bar">Bar</a>
+
+
+<a id="baz">Baz</a>
+</body>
+</html>
