@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Vanilla Scroll Navigation</title>
+  <title>Vanilla Parallax Scroll Nav</title>
 </head>
 <body>
 <style>
@@ -10,7 +10,7 @@ height: 6000px;
 font-family: Helvetica, Arial;
 }
 
-#top-menu {
+.vpsn {
 position: fixed;
 z-index: 1;
 background: white;
@@ -19,11 +19,7 @@ right: 0;
 top: 0;
 }
 
-#top-menu li {
-float: left;
-}
-
-#top-menu a {
+.vpsn a {
 display: block;
 padding: 5px 25px 7px 25px;
 width: 4em;
@@ -36,11 +32,11 @@ color: #aaa;
 text-decoration: none;
 }
 
-#top-menu a:hover {
+.vpsn a:hover {
 color: #000;
 }
 
-#top-menu a.active {
+.vpsn a.active {
 border-top: 3px solid #333;
 color: #333;
 }
@@ -62,7 +58,7 @@ top: 1200px;
 
 </style>
 
-<div id="top-menu">
+<div class="vpsn">
   <a href="#" class="active">Top</a>
   <a href="#foo">Foo</a>
   <a href="#bar">Bar</a>
@@ -76,6 +72,6 @@ top: 1200px;
 
 
 <a id="baz">Baz</a>
-<script src="../vsn.js"></script>
+<script src="../vpsn.js"></script>
 </body>
 </html>
