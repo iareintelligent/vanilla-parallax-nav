@@ -1,6 +1,7 @@
 
 {
-  "presets": ["es2015", "stage-2"],
-  "plugins": [],
-  "compact": true
+  "plugins": ["transform-es2015-modules-commonjs"],
+  "presets": ["es2015"],
+  "compact": true,
+  "sourceMaps": true
 }
