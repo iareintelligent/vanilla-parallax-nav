@@ -1,43 +1,22 @@
 //document.readyState === 'complete'?
 export default class ParallaxNav {
   constructor() {
-    // target element for active or default to anchor
-    // Cache selectors
-    let lastId,
-        topMenu = document.querySelector(".vpsn"),
-        topMenuHeight = window.getComputedStyle(topMenu).height
+    let topMenu = document.querySelector( ".vpsn" ),
+        topMenuHeight = window.getComputedStyle( topMenu ).height
 
-    for (let key in topMenu.children) {
+    for ( let key in topMenu.children ) {
       let child = topMenu.children[key],
           hash = topMenu.children[key].hash || ''
 
-      if ( hash ) {
-        child.addEventListener('click', this.clickHandler)
-      }
+      hash ? child.addEventListener('click', this.clickHandler) : ''
     }
-      // All list items
-      //menuItems = topMenu.find("a"),
-      //Anchors corresponding to menu items
-      // scrollItems = menuItems.map(function() {
-      //   var item = $($(this).attr("href"));
-      //   if (item.length) {
-      //     return item;
-      //   }
-      // })
-      console.log(topMenu)
-      console.log(topMenuHeight)
   }
-  // Bind click handler to menu items
-  // so we can get a fancy scroll animation
+
   clickHandler(e) {
-    console.log(e.target.hash)
-  //   debugger;
-  //   var href = $(this).attr("href"),
-  //     offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
-  //   $('html, body').stop().animate({
-  //     scrollTop: offsetTop
-  //   }, 300);
-  //   e.preventDefault();
+    let hash = e.target.hash,
+        offsetTop = hash ? document.querySelector(hash).scrollIntoView() :
+
+    e.preventDefault()
   }
 
   // Bind to scroll
