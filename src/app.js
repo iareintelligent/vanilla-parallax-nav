@@ -22,10 +22,22 @@ export default class ParallaxNav {
   }
 
   clickHandler(e) {
-    console.log(e.target.hash)
-    window.scroll( 0, this.sections[ e.target.hash ] )
+    this.scrollAnimate( this.sections[ e.target.hash ] )
+  }
 
+  scrollAnimate(end) {
+    let cur  = window.scrollY,
+        timer = setInterval( ()=>{
+          if ( cur == end ) {
+            //Stop animation
+            clearInterval( timer )
+          } else {
+            cur > end ? cur -= 1 : cur += 1
+            window.scrollTo( 0, cur )
+          }
+        }, 15)
   }
 }
+
 
 window.parallaxNav = new ParallaxNav(document.querySelector('.vpsn'))
