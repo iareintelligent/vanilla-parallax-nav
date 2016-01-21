@@ -26,6 +26,7 @@ export default class ParallaxNav {
   }
 
   scrollAnimate(end) {
+    // TODO: use requestanimationframe
     let cur  = window.scrollY,
         timer = setInterval( ()=>{
           if ( cur == end ) {
@@ -35,8 +36,9 @@ export default class ParallaxNav {
             cur > end ? cur -= 1 : cur += 1
             window.scrollTo( 0, cur )
           }
-        }, 15)
+        }, 1)
   }
+
 }
 
 
